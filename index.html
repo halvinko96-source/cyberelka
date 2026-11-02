@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#102d2a">
+<title>КиберЁлка — зажги безопасный Новый год</title>
+<meta name="description" content="Спаси цифровой праздник: семь новогодних испытаний по кибербезопасности от #ПГАТККЛЕЩЕВА.">
+<link rel="stylesheet" href="style.css"><script src="game.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<div class="snow" aria-hidden="true"></div>
+<header><a class="brand" href="./" aria-label="КиберЁлка, главная"><span class="brand-icon">✳</span> КИБЕРДОЗОР <span class="brand-small">/ НОВОГОДНЯЯ МИССИЯ</span></a><button id="sound" class="round-button" aria-pressed="false" aria-label="Включить музыку">♫ <span>Музыка</span></button></header>
+<main>
+<section class="intro"><div class="eyebrow"><span class="tiny-dot"></span> ИНТЕРАКТИВНАЯ ОТКРЫТКА</div><h1>Зажги свою<br><em>КиберЁлку.</em></h1><p>Семь огоньков. Семь безопасных решений.<br>Один праздник, который мы спасём вместе.</p></section>
+<section class="game-layout" aria-label="Игровая ёлка">
+<aside class="mission"><div class="section-label">ТВОЯ МИССИЯ <span>01 — 07</span></div><h2 id="mission-title">Верни празднику свет</h2><p id="mission-copy">КиберГринч погасил огни. За каждой игрушкой — цифровая ловушка. Раскрой её, и ёлка станет ярче.</p><button class="primary" id="next">Зажечь первый огонёк <span>↗</span></button><div class="progress-info"><strong id="count">0 <span>/ 7</span></strong><span id="progress-label">огоньков зажжено</span></div><div class="progress-track" role="progressbar" aria-label="Прогресс игры" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0"><div id="progress-fill"></div></div><p class="quiet">Ошибаться можно. Подсказки помогут<br>найти безопасное решение.</p><p class="storage-note" id="storage-note" hidden>В этом браузере прогресс сохраняется только до закрытия страницы.</p></aside>
+<div class="tree-scene"><div class="scene-halo"></div><div class="scene-top-label">НАЖМИ НА ЛЮБУЮ ИГРУШКУ</div>
+<div class="tree-wrap" id="tree-wrap">
+<svg viewBox="0 0 500 610" class="tree" aria-hidden="true">
+<defs><linearGradient id="fir" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#498a6b"/><stop offset=".5" stop-color="#245d49"/><stop offset="1" stop-color="#163d35"/></linearGradient><linearGradient id="edge"><stop stop-color="#b2d9ae" stop-opacity=".6"/><stop offset="1" stop-color="#60967a" stop-opacity="0"/></linearGradient><radialGradient id="ground"><stop stop-color="#b6d9bd" stop-opacity=".18"/><stop offset="1" stop-color="#b6d9bd" stop-opacity="0"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="5"/></filter></defs>
+<ellipse cx="250" cy="563" rx="220" ry="40" fill="url(#ground)"/><path d="M236 490h28v65h-28z" fill="#96734e"/><path d="M250 260 461 520Q250 554 39 520Z" fill="url(#fir)"/><path d="M250 171 420 404Q250 439 80 404Z" fill="url(#fir)"/><path d="M250 91 370 288Q250 320 130 288Z" fill="url(#fir)"/><path d="M250 91 130 288M250 171 80 404M250 260 39 520" stroke="url(#edge)" stroke-width="2" fill="none"/>
+<g stroke="#bdc090" stroke-width="1.5" fill="none" opacity=".65"><path d="M192 201Q241 246 329 222"/><path d="M145 329Q246 380 376 344"/><path d="M95 459Q253 518 424 473"/></g>
+<g id="star"><path d="m250 45 11 25 27 3-20 18 6 27-24-14-24 14 6-27-20-18 27-3z" fill="#c8cba0"/><path d="m250 45 11 25 27 3-20 18 6 27-24-14-24 14 6-27-20-18 27-3z" fill="#f5db8a" filter="url(#glow)" opacity="0" class="star-glow"/></g>
+<g class="gifts"><rect x="115" y="536" width="65" height="44" rx="4" fill="#c7ad7b"/><path d="M146 536v44M115 548h65" stroke="#f3dfb8" stroke-width="6"/><rect x="318" y="528" width="55" height="52" rx="4" fill="#b17d67"/><path d="M345 528v52M318 541h55" stroke="#e5c2a4" stroke-width="6"/></g></svg>
+<div id="ornaments"></div><div class="tree-base-caption"><span>✦</span> ЦИФРОВОЕ ДОБРО НАЧИНАЕТСЯ С ТЕБЯ <span>✦</span></div></div>
+<div id="live" class="sr-only" role="status" aria-live="polite"></div>
+</div>
+<aside class="journey"><div class="section-label">СЕМЬ ИСПЫТАНИЙ</div><ol id="mission-list"></ol><div class="little-note"><span>✧</span><p>Внимательность —<br>твой лучший подарок<br>себе в новом году.</p></div></aside>
+</section>
+<section id="final" class="final" hidden><div class="eyebrow">МИССИЯ ВЫПОЛНЕНА</div><h2>Ты вернул празднику <em>свет!</em></h2><p>Пусть яркими будут впечатления,<br>а надёжными — твои цифровые привычки.</p><div class="final-actions"><button class="primary" id="download">Скачать открытку ↓</button><button class="secondary" id="share">Поделиться игрой ↗</button></div><p class="quiet" id="share-note" role="status"></p></section>
+<div class="bottom-note"><span>◈ &nbsp; 5–7 МИНУТ · БЕЗ РЕГИСТРАЦИИ</span><span>Прогресс сохраняется в этом браузере</span></div>
+</main>
+<footer><span>#ПГАТККЛЕЩЕВА</span><div><button id="about">Об игре</button><button id="reset">Начать заново ↺</button></div><span>Береги себя. И свой цифровой мир.</span></footer>
+<dialog id="task" aria-labelledby="task-title"><div class="dialog-head"><span id="task-number" class="eyebrow"></span><button id="close-task" class="close" aria-label="Закрыть задание">×</button></div><div id="task-icon" class="task-icon"></div><h2 id="task-title"></h2><p id="task-text"></p><div id="answers"></div><div id="feedback" role="status" aria-live="polite" hidden></div><button id="task-done" class="primary" hidden>Вернуться к ёлке ↗</button></dialog>
+<dialog id="info" aria-labelledby="info-title"><div class="dialog-head"><span class="eyebrow">КИБЕРЁЛКА</span><button class="close" id="close-info" aria-label="Закрыть">×</button></div><h2 id="info-title"></h2><div id="info-body"></div><div id="info-actions"></div></dialog>
+<noscript><p class="noscript">Для игры включите JavaScript в браузере.</p></noscript>
+</body></html>
